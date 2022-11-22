@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.example.springboot.HelloControllerTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 3.546 s <<< FAILURE! - in com.example.springboot.HelloControllerTest
+getHello  Time elapsed: 0.573 s  <<< FAILURE!
+java.lang.AssertionError: 
+Response content
+Expected: "Greetings from Spring Boot!"
+     but: was "Greetings from ESign!"
+	at com.example.springboot.HelloControllerTest.getHello(HelloControllerTest.java:27)
+
