@@ -32,7 +32,7 @@ public class SSOClass {
 		if (resp.get("action").equals("no_action")) {
 			resultObj.put("isValidUser", true);
 			resultObj.put("isSSOUser", false);
-		} else if(resp.get("action").equals("redirect")){
+		} else if(resp.get("action").equals("redirect")&&resp.get("redirect_type").equals("sso")){
 			redirect_URL = (String) resp.get("redirect_uri");
 			resultObj.put("isValidUser", true);
 			resultObj.put("isSSOUser", true);
