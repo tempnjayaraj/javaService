@@ -27,6 +27,7 @@ public class SSOClass {
 				.build();
 		Response response = client.newCall(request).execute();
 		JSONObject resp = (JSONObject) new JSONParser().parse(response.body().string());
+		System.out.println(resp.toString());
 		String redirect_URL = null;
 		boolean isSSO = false;
 		if (resp.get("action").equals("no_action")) {
@@ -46,16 +47,17 @@ public class SSOClass {
 			MediaType mediaType1 = MediaType.parse("text/plain");
 			RequestBody body1 = RequestBody.create(mediaType1, "");
 			Request request1 = new Request.Builder().url(
-					"https://id.atlassian.com/login/saml/start?connection=saml-258a0d52-9a23-401f-9e87-25e539291591&continue=https%3A%2F%2Fjohnsonesign.atlassian.net&application=jira")
+							redirect_URL)
 					.method("GET", null)
 					.addHeader("Cookie",
 							"atlassian.account.ffs.id=36ba4e82-6ccb-4ae4-9bde-2f0a4e4c4298; atlassian.account.xsrf.token=57e8f184-b1b7-43ec-b693-79d15a73456c")
 					.build();
 			Response response1 = client.newCall(request1).execute();
 			String HTMLResp = response1.body().string();
-			if (HTMLResp.contains("okta")) {
+			System.out.println(HTMLResp);
+			if (HTMLResp.contains("Okta")) {
 				resultObj.put("SSO", "Okta");
-			}else if(HTMLResp.contains("azure")) {
+			}else if(HTMLResp.contains("microsoft")) {
 				resultObj.put("SSO", "Azure");
 			}
 		}
