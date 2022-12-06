@@ -56,9 +56,13 @@ public class SSOClass {
 			String HTMLResp = response1.body().string();
 			System.out.println(HTMLResp);
 			if (HTMLResp.contains("Okta")) {
+				
 				resultObj.put("SSO", "Okta");
+				
 			}else if(HTMLResp.contains("microsoft")) {
+				
 				resultObj.put("SSO", "Azure");
+				
 			}
 		}
 		return resultObj;

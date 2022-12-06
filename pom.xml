@@ -34,12 +34,11 @@
       <artifactId>msal4j</artifactId>  
       <version>1.10.1</version> 
     </dependency>  
-    <dependency>
-    <groupId>com.squareup.okhttp3</groupId>
-    <artifactId>okhttp</artifactId>
-    <version>4.10.0</version>
-</dependency>
-
+    <dependency> 
+      <groupId>com.squareup.okhttp3</groupId>  
+      <artifactId>okhttp</artifactId>  
+      <version>4.10.0</version> 
+    </dependency>  
     <dependency> 
       <groupId>org.slf4j</groupId>  
       <artifactId>slf4j-simple</artifactId>  
@@ -69,27 +68,28 @@
         <artifactId>azure-webapp-maven-plugin</artifactId>  
         <version>2.5.0</version>  
         <configuration> 
-          <schemaVersion>v2</schemaVersion>  
-          <subscriptionId>05f6a2f1-9c6c-4436-96d7-b76b49a23348</subscriptionId>  
-          <resourceGroup>saranresource</resourceGroup>  
-          <appName>saranesign</appName>  
-          <pricingTier>S1</pricingTier>  
-          <region>centralus</region>  
-          <runtime> 
-            <os>Linux</os>  
-            <javaVersion>Java 11</javaVersion>  
-            <webContainer>Java SE</webContainer> 
-          </runtime>  
-          <deployment> 
-            <resources> 
-              <resource> 
-                <directory>${project.basedir}/target</directory>  
-                <includes> 
-                  <include>*.jar</include> 
-                </includes> 
-              </resource> 
-            </resources> 
-          </deployment> 
+          <subscriptionId>8ff439b3-d738-4b7e-a087-eb5facb97710</subscriptionId>
+          <resourceGroup>mohanresource</resourceGroup>
+          <appName>mohanesign</appName>
+          <pricingTier>S1</pricingTier>
+          <region>centralus</region>
+          <appServicePlanName>asp-mohanesign</appServicePlanName>
+          <appServicePlanResourceGroup>mohanresource</appServicePlanResourceGroup>
+          <runtime>
+            <os>Windows</os>
+            <javaVersion>Java 11</javaVersion>
+            <webContainer>Java SE</webContainer>
+          </runtime>
+          <deployment>
+            <resources>
+              <resource>
+                <directory>${project.basedir}/target</directory>
+                <includes>
+                  <include>*.jar</include>
+                </includes>
+              </resource>
+            </resources>
+          </deployment>
         </configuration> 
       </plugin> 
     </plugins> 
